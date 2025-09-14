@@ -1,6 +1,6 @@
 user_id,event_name,event_timestamp,platform,traffic_source,event_id
-user_3,login,2025-09-10T08:43:19.393426,ios,google,af2de1ba-e1d0-4356-9d7e-a5f2ff079eb2
-user_2,page_view,2025-09-10T08:43:19.393426,android,facebook,bcd1387b-d8e0-4078-a088-bc80dd24ff16
-user_2,login,2025-09-10T08:43:19.393426,android,google,9addeca4-3833-4429-a4d5-d160a28cacc1
-user_1,page_view,2025-09-10T08:43:19.393426,android,facebook,f401c07e-0984-4357-9ab2-e3c9a223ffbb
-user_3,purchase,2025-09-10T08:43:19.393426,web,direct,49a10661-6325-4b73-8c31-dfdf713a0c05
+user_34d6c074-f560-4006-a1df-f8b471754fa2,page_view,2025-09-14T19:10:48.962281,android,direct,5095ad47-1ce2-43cc-b3ad-89c37e255d4b
+user_984ff894-fe0e-4c0a-baa1-1b2544610189,purchase,2025-09-14T19:10:48.962343,android,direct,a3a0d3f2-4778-46d1-a5e7-2b4f808ad1e9
+user_9cbbb755-56d2-49d3-b4da-1e617d30efbd,page_view,2025-09-14T19:10:48.962398,android,direct,cda9f0d4-715c-46e1-8da5-70fe535a2b95
+user_c4ca6727-8b03-4473-9afe-0c4917bc828e,page_view,2025-09-14T19:10:48.962440,web,facebook,4380d5e3-c332-4768-ac15-e15b3318284f
+user_db6b1a25-32aa-4a07-b900-1214ae2efb60,login,2025-09-14T19:10:48.962476,ios,facebook,b20b8779-3431-4162-8d3a-656bd31c311e
