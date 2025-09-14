@@ -1,15 +1,110 @@
-Welcome to your new dbt project!
+# Real-time Attribution Dashboard
 
-### Using the starter project
+## 📌 Overview
+This project implements a **near real-time attribution pipeline and dashboard** that computes **First-Click** and **Last-Click** attribution using:
+- GA4 Public Dataset (BigQuery)
+- dbt (staging → intermediate → marts → attribution models)
+- Python streaming demo (batch inserts into BigQuery)
+- Looker Studio Dashboard
 
-Try running the following commands:
-- dbt run
-- dbt test
+The assignment simulates how real-world attribution modeling is built for marketing analytics.
+
+---
+
+## 🏗️ Architecture
+![Architecture Diagram](architecture.png)
+
+**Flow:**
+1. GA4 Public Dataset → BigQuery Staging (via dbt)
+2. dbt builds intermediate and mart models:
+   - `int_user_journey`
+   - `mart_first_click`
+   - `mart_last_click`
+3. Python script simulates real-time events → inserts into `streaming_events` table
+4. Looker Studio dashboard visualizes:
+   - First vs Last totals
+   - 14-day trend
+   - Channel breakdown
+   - Live streaming events
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone Repo
+```bash
+git clone https://github.com/sneha226/attribution_project.git
+cd attribution_project
+
+3. dbt Setup
+
+Ensure dbt is installed (dbt --version).
+
+Configure your profiles.yml with your GCP project ID and dataset.
+
+4. Run dbt Models
+dbt run
+dbt test
+
+5. Run Streaming Demo
+
+Generate synthetic events:
+python scripts/generate_events_csv.py
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+Stream them into BigQuery:
+python scripts/stream_events.py
+
+
+
+📂 Project Structure
+attribution_project/
+├── models/
+│   ├── staging/
+│   │   ├── stg_events.sql
+│   │   └── schema.yml
+│   ├── intermediate/
+│   │   └── int_user_journey.sql
+│   └── marts/
+│       ├── mart_first_click.sql
+│       ├── mart_last_click.sql
+│       └── schema.yml
+├── scripts/
+│   ├── generate_events_csv.py
+│   ├── stream_events.py
+│   ├── batch_0.csv, batch_1.csv, batch_2.csv
+│   └── events.csv
+├── architecture.png
+├── README.md
+└── worklog.md
+
+🚨 Sandbox Limitation
+
+Since this project uses BigQuery Sandbox (Free Tier):
+
+Streaming inserts are not allowed.
+
+I simulated near-real-time ingestion by batching small CSV event files (batch_0.csv, batch_1.csv, batch_2.csv) into BigQuery.
+
+⚡ In a billing-enabled project, the same Python script would use BigQuery’s insert_rows_json API for live streaming.
+
+📒 Runbook
+Failure Handling
+
+dbt: rerun dbt run if a job fails; logs are available in target/ folder.
+
+Streaming: rerun batch inserts; idempotency ensured by using unique event IDs.
+
+Monitoring
+
+Use BigQuery audit logs for job monitoring.
+
+Add Slack/Email alerts for streaming failures in production.
+
+Cost Notes
+
+Free Tier (Sandbox) used → no billing.
+
+In production: costs mainly from BigQuery storage, query processing, and streaming inserts.
+
+
