@@ -3,7 +3,7 @@ import csv, random, time, uuid
 from datetime import datetime
 
 client = bigquery.Client()
-table_id = "luminous-wharf-471617-h4.attribution_dataset.streaming_events"
+table_id = "cohesive-beach-445504-m1.attribution_dataset.streaming_events"
 
 # Schema config
 job_config = bigquery.LoadJobConfig(
