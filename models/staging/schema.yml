@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "Raw GA4-like events staging table"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        tests:
+          - not_null
+          - unique
+      - name: event_name
+        description: "Type of event (page_view, purchase, etc.)"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "Event timestamp in UTC"
+        tests:
+          - not_null
+      - name: platform
+        description: "Platform of event (web, ios, android)"
+      - name: traffic_source
+        description: "Traffic source (google, facebook, direct, email)"

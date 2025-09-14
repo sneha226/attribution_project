@@ -1,0 +1,11 @@
+user_id,event_name,event_timestamp,platform,traffic_source
+user_4,signup,2025-09-10T06:07:13.793787,android,google
+user_5,signup,2025-09-10T06:07:13.793787,ios,direct
+user_5,purchase,2025-09-10T06:07:13.793787,ios,direct
+user_2,purchase,2025-09-10T06:07:13.793787,ios,email
+user_2,add_to_cart,2025-09-10T06:07:13.793787,web,facebook
+user_4,add_to_cart,2025-09-10T06:07:13.793787,web,google
+user_3,page_view,2025-09-10T06:07:13.793787,ios,facebook
+user_1,page_view,2025-09-10T06:07:13.793787,web,facebook
+user_5,purchase,2025-09-10T06:07:13.793787,web,facebook
+user_3,purchase,2025-09-10T06:07:13.793787,android,direct

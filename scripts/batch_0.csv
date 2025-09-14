@@ -1,0 +1,6 @@
+user_id,event_name,event_timestamp,platform,traffic_source,event_id
+user_2,page_view,2025-09-10T08:43:08.803142,web,direct,f9c3385a-c176-4a81-993a-f8db77149512
+user_2,login,2025-09-10T08:43:08.803142,ios,google,a4e25160-e1d4-483f-8661-8a7ec1c67181
+user_3,login,2025-09-10T08:43:08.803142,web,google,2902ce66-54e9-4055-a78a-9d81a6c89a9d
+user_3,login,2025-09-10T08:43:08.803142,android,direct,3f64b9c8-75e8-4ed4-ae12-8eea44c6ce47
+user_3,page_view,2025-09-10T08:43:08.803142,android,direct,af510813-8c8f-4f1f-a3c3-dc8eeeaf8370

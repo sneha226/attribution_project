@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: int_user_journey
+    description: "Intermediate table ordering events per user"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        tests:
+          - not_null
+      - name: event_name
+        description: "Type of event"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "Event timestamp in UTC"
+        tests:
+          - not_null
+
+  - name: mart_first_click
+    description: "First Click attribution per user"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        tests:
+          - not_null
+          - unique
+      - name: first_click_event
+        description: "Event name of first click"
+        tests:
+          - not_null
+      - name: first_click_timestamp
+        description: "Timestamp of first click"
+        tests:
+          - not_null
+
+  - name: mart_last_click
+    description: "Last Click attribution per user"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        tests:
+          - not_null
+          - unique
+      - name: last_click_event
+        description: "Event name of last click"
+        tests:
+          - not_null
+      - name: last_click_timestamp
+        description: "Timestamp of last click"
+        tests:
+          - not_null
