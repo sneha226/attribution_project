@@ -5,10 +5,10 @@ models:
     description: "Raw GA4-like events staging table"
     columns:
       - name: user_id
-        description: "Unique user identifier"
+        description: "Unique user identifier for this event"
         tests:
-          - not_null
-          - unique
+          - not_null   # ✅ keep this
+          # - unique   # ❌ remove, user_id appears in multiple events
       - name: event_name
         description: "Type of event (page_view, purchase, etc.)"
         tests:

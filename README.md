@@ -53,7 +53,7 @@ python scripts/generate_events_csv.py
 
 
 Stream them into BigQuery:
-python scripts/stream_events.py
+python scripts/generate_events_csv.py
 
 
 
@@ -77,6 +77,22 @@ attribution_project/
 ├── architecture.png
 ├── README.md
 └── worklog.md
+
+📊 Dashboard
+
+The Looker Studio dashboard includes:
+
+First vs Last Click Attribution (totals)
+
+14-Day Time Series (purchases over time)
+
+Traffic Source Breakdown (bar chart)
+
+Live Streaming Events Panel
+
+🔗 Dashboard Link: [https://lookerstudio.google.com/reporting/3d3f4de1-fe7c-4a7d-8c67-2c858ea30849]
+
+
 
 🚨 Sandbox Limitation
 
